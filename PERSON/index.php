@@ -20,5 +20,5 @@ elseif(isset($_SESSION['valid']) && $_SESSION['role']=='user'){
         echo "You must be logged in to view this page.<br/><br/>";
         echo "<a href='login.php'>Login</a> | <a href='register.php'>Register</a>";
     }
-include("view/footer.php");
+//include("view/footer.php");
     ?>
