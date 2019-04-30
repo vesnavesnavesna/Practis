@@ -1,6 +1,8 @@
 <?php
  
-require_once 'C:/Apache24/htdocs/PERSON/model/PersonsModel.php';
+
+ require_once $_SERVER['DOCUMENT_ROOT'] . '/PERSON/model/Autoloader.php';
+require_once ROOT_PATH.'model/PersonsModel.php';
  
 class PersonsController {
      
@@ -35,7 +37,7 @@ class PersonsController {
     public function listPersons() {
      
         $persons = $this->personsModel->selectAll();
-        include 'view/personsFORuser.php';}
+        include ROOT_PATH.'view/personsFORuser.php';}
  public function addPerson() {
         
         $title = 'ADD NEW PERSON';
@@ -67,7 +69,7 @@ class PersonsController {
             }
         }
          
-        include 'view/person_form.php';
+        include ROOT_PATH.'view/person_form.php';
     }
     
      
@@ -87,11 +89,11 @@ class PersonsController {
            } catch (ValidationException $e) {
                 $errors = $e->getErrors();
             }}
-        include 'view/person.php';
+        include ROOT_PATH.'view/person.php';
     }
      
     public function showError($title, $message) {
-        include 'view/error.php';
+        include ROOT_PATH.'view/error.php';
     }
      
 }
